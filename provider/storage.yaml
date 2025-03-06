@@ -1,0 +1,21 @@
+identity:
+  author: hjlarry
+  name: storage
+  label:
+    en_US: storage
+    zh_Hans: storage
+    pt_BR: storage
+  description:
+    en_US: a key-value storage tool allow you save and get data across different apps.
+    zh_Hans: a key-value storage tool allow you save and get data across different apps.
+    pt_BR: a key-value storage tool allow you save and get data across different apps.
+  icon: icon.svg
+tools:
+  - tools/get_string.yaml
+  - tools/set_string.yaml
+  - tools/get_file.yaml
+  - tools/set_file.yaml
+  - tools/delete_key.yaml
+extra:
+  python:
+    source: provider/storage.py

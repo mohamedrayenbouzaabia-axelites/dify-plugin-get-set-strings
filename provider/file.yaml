@@ -1,0 +1,11 @@
+settings:
+  - name: api_key
+    type: secret-input
+    required: false
+    label:
+      en_US: API key
+    placeholder:
+      en_US: Please input your API key
+      zh_Hans: 请输入你的 API key
+endpoints:
+  - endpoints/file.yaml

@@ -1,0 +1,26 @@
+identity:
+  name: get_file
+  author: hjlarry
+  label:
+    en_US: get file
+    zh_Hans: 获取文件
+description:
+  human:
+    en_US: To get a key-value file.
+    zh_Hans: 通过键获取文件。
+  llm: To get a key-value file.
+parameters:
+  - name: key
+    type: string
+    required: true
+    label:
+      en_US: Key
+      zh_Hans: 键
+    human_description:
+      en_US: To get a key-value file.
+      zh_Hans: 通过键获取文件。
+    llm_description: To get a key-value file.
+    form: llm
+extra:
+  python:
+    source: tools/get_file.py

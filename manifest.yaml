@@ -1,0 +1,35 @@
+version: 0.0.2
+type: plugin
+author: hjlarry
+name: storage
+label:
+  en_US: Storage
+  zh_Hans: 存储
+description:
+  en_US: a key-value storage tool allow you save and get data across different apps.
+  zh_Hans: 一个键值存储工具,允许你在不同的应用之间保存和获取数据。  
+icon: icon.svg
+resource:
+  memory: 268435456
+  permission:
+    endpoint:
+      enabled: true
+    storage:
+      enabled: true
+      size: 1073741824
+plugins:
+  tools:
+    - provider/storage.yaml
+  endpoints:
+    - provider/file.yaml
+meta:
+  version: 0.0.2
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+created_at: 2024-12-23T09:11:35.7735334+08:00
+verified: false

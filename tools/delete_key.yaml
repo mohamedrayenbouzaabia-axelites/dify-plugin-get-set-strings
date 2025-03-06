@@ -1,0 +1,26 @@
+identity:
+  name: delete_key
+  author: hjlarry
+  label:
+    en_US: delete key
+    zh_Hans: 删除键
+description:
+  human:
+    en_US: To delete a key.
+    zh_Hans: 删除一个键。
+  llm: To delete a key.
+parameters:
+  - name: key
+    type: string
+    required: true
+    label:
+      en_US: Key
+      zh_Hans: 键
+    human_description:
+      en_US: To delete a key.
+      zh_Hans: 删除一个键。
+    llm_description: To delete a key.
+    form: llm
+extra:
+  python:
+    source: tools/delete_key.py

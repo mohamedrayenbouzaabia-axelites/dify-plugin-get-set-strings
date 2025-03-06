@@ -1,0 +1,49 @@
+identity:
+  name: set_file
+  author: hjlarry
+  label:
+    en_US: set file
+    zh_Hans: 设置文件
+description:
+  human:
+    en_US: To set a key-value file.
+    zh_Hans: 设置一个键值文件。
+  llm: To set a key-value file. 
+parameters:
+  - name: key
+    type: string
+    required: true
+    label:
+      en_US: Key
+      zh_Hans: 键
+    human_description:
+      en_US: Key of the file to be set
+      zh_Hans: 要设置的文件的键
+    llm_description: Key
+    form: llm
+  - name: file
+    type: file
+    required: true
+    label:
+      en_US: File
+      zh_Hans: 文件
+    human_description:
+      en_US: File to be set
+      zh_Hans: 要设置的文件
+    llm_description: File
+    form: llm
+  - name: size
+    type: number
+    default: 10
+    required: false
+    label:
+      en_US: Size
+      zh_Hans: 大小
+    human_description:
+      en_US: Limit the size of the uploaded file. (default:10MB)
+      zh_Hans: 限制用户上传文件的大小。(默认:10MB)
+    llm_description: Size
+    form: form
+extra:
+  python:
+    source: tools/set_file.py
