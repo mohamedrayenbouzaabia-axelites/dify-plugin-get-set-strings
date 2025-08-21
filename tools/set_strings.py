@@ -13,19 +13,15 @@ class SetStringsTool(Tool):
         except Exception as e:
             raise ValueError(f"Invalid JSON for items: {e}")
        
-       
         if not isinstance(kv_pairs, list):
             raise ValueError("items must be a JSON list of {key, value}")
      
         for pair in kv_pairs:
             key, value = next(iter(pair.items()))
-            print("Setting hi ho 3")
             if not key or value is None:
                 continue
-            print("Setting hi ho 4")
             if tool_parameters.get("size") and len(value) > tool_parameters["size"]:
                 raise ValueError(f"Value for key '{key}' is too large")
-            print("Setting hi ho 5")
             self.session.storage.set(key, value.encode())
             
 
