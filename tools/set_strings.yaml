@@ -11,25 +11,14 @@ description:
   llm: To set multiple key-value strings.
 parameters:
   - name: items
-    type: array
+    type: string
     required: true
     label:
       en_US: Key-Value Pairs
-      zh_Hans: 键值对
     human_description:
-      en_US: List of key-value pairs to set.
-      zh_Hans: 要设置的键值对列表。
-    llm_description: A list of objects with "key" and "value".
+      en_US: JSON array of objects with key/value
+    llm_description: "JSON string, example: [{\"key\":\"a\",\"value\":\"1\"},{\"key\":\"b\",\"value\":\"2\"}]"
     form: llm
-    items:
-      type: object
-      properties:
-        key:
-          type: string
-          required: true
-        value:
-          type: string
-          required: true
   - name: size
     type: number
     required: false

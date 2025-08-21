@@ -11,18 +11,16 @@ description:
   llm: To get multiple key-value strings.
 parameters:
   - name: keys
-    type: array
+    type: string
     required: true
     label:
       en_US: Keys
       zh_Hans: 键列表
     human_description:
-      en_US: The list of keys whose values should be retrieved.
-      zh_Hans: 要获取的键列表。
-    llm_description: A list of keys to retrieve values for.
+      en_US: JSON array of keys to retrieve.
+      zh_Hans: JSON 数组，包含要获取的键。
+    llm_description: "Provide a JSON string, e.g. [\"a\",\"b\",\"c\"]"
     form: llm
-    items:
-      type: string
 extra:
   python:
     source: tools/get_strings.py

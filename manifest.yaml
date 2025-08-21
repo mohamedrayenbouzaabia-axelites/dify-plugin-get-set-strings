@@ -3,7 +3,7 @@ type: plugin
 author: hjlarry
 name: storage
 label:
-  en_US: Storage
+  en_US: Storage Of Rayen
   zh_Hans: 存储
 description:
   en_US: a key-value storage tool allow you save and get data across different apps.

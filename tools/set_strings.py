@@ -1,3 +1,4 @@
+import json
 from collections.abc import Generator
 from typing import Any
 
@@ -7,20 +8,25 @@ from dify_plugin.entities.tool import ToolInvokeMessage
 
 class SetStringsTool(Tool):
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
-        kv_pairs: list[dict[str, str]] = tool_parameters.get("items", [])
-
+        try:
+            kv_pairs = json.loads(tool_parameters.get("items", "[]"))
+        except Exception as e:
+            raise ValueError(f"Invalid JSON for items: {e}")
+       
+       
         if not isinstance(kv_pairs, list):
-            raise ValueError("items must be a list of {key, value} objects")
-
+            raise ValueError("items must be a JSON list of {key, value}")
+     
         for pair in kv_pairs:
-            key = pair.get("key")
-            value = pair.get("value")
+            key, value = next(iter(pair.items()))
+            print("Setting hi ho 3")
             if not key or value is None:
                 continue
-
+            print("Setting hi ho 4")
             if tool_parameters.get("size") and len(value) > tool_parameters["size"]:
                 raise ValueError(f"Value for key '{key}' is too large")
-
+            print("Setting hi ho 5")
             self.session.storage.set(key, value.encode())
+            
 
-        yield self.create_text_message("SUCCESS: All strings set")
+        yield self.create_text_message("SUCCESS: All strings settt")
