@@ -1,9 +1,9 @@
 version: 0.0.2
 type: plugin
-author: hjlarry
-name: storage
+author: Rayen@Axelites
+name: Storage_forked
 label:
-  en_US: Storage Of Rayen
+  en_US: Storage forked
   zh_Hans: 存储
 description:
   en_US: a key-value storage tool allow you save and get data across different apps.
