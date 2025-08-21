@@ -13,6 +13,8 @@ identity:
 tools:
   - tools/get_string.yaml
   - tools/set_string.yaml
+  - tools/get_strings.yaml
+  - tools/set_strings.yaml
   - tools/get_file.yaml
   - tools/set_file.yaml
   - tools/delete_key.yaml
