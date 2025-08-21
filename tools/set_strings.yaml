@@ -1,0 +1,46 @@
+identity:
+  name: set_strings
+  author: hjlarry
+  label:
+    en_US: set strings
+    zh_Hans: 设置多个字符串
+description:
+  human:
+    en_US: To set multiple key-value strings.
+    zh_Hans: 设置多个键值字符串。
+  llm: To set multiple key-value strings.
+parameters:
+  - name: items
+    type: array
+    required: true
+    label:
+      en_US: Key-Value Pairs
+      zh_Hans: 键值对
+    human_description:
+      en_US: List of key-value pairs to set.
+      zh_Hans: 要设置的键值对列表。
+    llm_description: A list of objects with "key" and "value".
+    form: llm
+    items:
+      type: object
+      properties:
+        key:
+          type: string
+          required: true
+        value:
+          type: string
+          required: true
+  - name: size
+    type: number
+    required: false
+    label:
+      en_US: Size
+      zh_Hans: 大小
+    human_description:
+      en_US: Limit the size of each string.
+      zh_Hans: 限制每个字符串的大小。
+    llm_description: Maximum allowed string size.
+    form: form
+extra:
+  python:
+    source: tools/set_strings.py

@@ -1,0 +1,28 @@
+identity:
+  name: get_strings
+  author: hjlarry
+  label:
+    en_US: get strings
+    zh_Hans: 获取多个字符串
+description:
+  human:
+    en_US: To get multiple key-value strings.
+    zh_Hans: 获取多个键值字符串。
+  llm: To get multiple key-value strings.
+parameters:
+  - name: keys
+    type: array
+    required: true
+    label:
+      en_US: Keys
+      zh_Hans: 键列表
+    human_description:
+      en_US: The list of keys whose values should be retrieved.
+      zh_Hans: 要获取的键列表。
+    llm_description: A list of keys to retrieve values for.
+    form: llm
+    items:
+      type: string
+extra:
+  python:
+    source: tools/get_strings.py
